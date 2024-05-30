@@ -1,0 +1,6 @@
+@ClaimTheSquareFullStack_HostAddress = http://localhost:5180
+
+GET {{ClaimTheSquareFullStack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
