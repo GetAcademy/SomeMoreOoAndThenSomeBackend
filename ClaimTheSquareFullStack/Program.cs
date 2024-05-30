@@ -3,18 +3,34 @@ using ClaimTheSquareFullStack.Model;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 app.UseHttpsRedirection();
-app.MapGet("/terje", () =>
+var textobjects = new List<TextObject>()
 {
-    return new Person
-    {
-        Name = "Terje",
-        Email = "terje@getacademy.no"
-    };
+    new TextObject{ Index = 5, Text ="A", BackColor = "blue", ForeColor = "white"},
+    new TextObject{ Index = 6, Text ="B", BackColor = "white", ForeColor = "blue"},
+};
+app.MapGet("/textobject", () =>
+{
+    return textobjects;
 });
-
-app.MapPost("/terje", (Person p) =>
+app.MapPost("/textobject", (TextObject textobject) =>
 {
-    Console.WriteLine($"{p.Name} {p.Email}");
+    textobjects.Add(textobject);
 });
 app.UseStaticFiles();
 app.Run();
+
+/*
+   app.MapGet("/terje", () =>
+   {
+   return new Person
+   {
+   Name = "Terje",
+   Email = "terje@getacademy.no"
+   };
+   });
+   
+   app.MapPost("/terje", (Person p) =>
+   {
+   Console.WriteLine($"{p.Name} {p.Email}");
+   });
+ */
