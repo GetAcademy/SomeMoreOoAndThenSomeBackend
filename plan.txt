@@ -5,6 +5,9 @@
 2: Vi ser på en ferdig frontend som vi skal lage backend til
    https://getacademy.github.io/ClaimTheSquare
 3: Intro til backend med ASP.NET + lage backend til frontenden vi har
+   - "In-memory persistens"
+   - Lagring til fil
+   - Database (neste gang)
 4: HTTP tunnels med NGROK
 
 Hva er et API? Hva er en backend?
