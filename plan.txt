@@ -1,0 +1,18 @@
+1: Nytt eksempel på OO - List
+   - komme rundt fast lengde på array
+   - pakke inn med OO
+   - generics
+2: Vi ser på en ferdig frontend som vi skal lage backend til
+3: Intro til backend med ASP.NET + lage backend til frontenden vi har
+4: HTTP tunnels med NGROK
+
+Hva er et API? Hva er en backend?
+
+
+
+
+Denne videoen vider hvordan man setter opp http-tunnel gratis med Ngrok: 
+https://www.youtube.com/watch?v=KcbUaZ2a4hc
+Kort oppsummering: 
+- lag konto på https://ngrok.com/
+- last ned https://ngrok.com/download og installer
