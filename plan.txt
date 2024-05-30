@@ -2,7 +2,7 @@
    - komme rundt fast lengde på array
    - pakke inn med OO
    - generics
-2: En enklest mulig backend
+2: En enklest mulig backend - med ASP.NET Minimal API
    - Hva er et API? Hva er en backend?
 3: Vi ser på en ferdig frontend som vi skal lage backend til
    https://getacademy.github.io/ClaimTheSquare
