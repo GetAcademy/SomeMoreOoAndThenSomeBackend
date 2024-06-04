@@ -1,39 +1,23 @@
-using System.Text.Json;
+using System.Data.SqlClient;
 using ClaimTheSquareFullStack.Model;
+using Dapper;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 app.UseHttpsRedirection();
 
-app.MapGet("/textobject", () =>
+var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MyTextObjects;Integrated Security=True";
+
+app.MapGet("/textobject", async () =>
 {
-    var json = File.ReadAllText("textobjects.json");
-    var textobjects = JsonSerializer.Deserialize<List<TextObject>>(json);
+    var conn = new SqlConnection(connection);
+    var textobjects = await conn.QueryAsync<TextObject>("SELECT * FROM TextObject");
     return textobjects;
 });
-app.MapPost("/textobject", (TextObject textobject) =>
+app.MapPost("/textobject", async (TextObject textobject) =>
 {
-    var json = File.ReadAllText("textobjects.json");
-    var textobjects = JsonSerializer.Deserialize<List<TextObject>>(json);
-    textobjects.Add(textobject);
-    json = JsonSerializer.Serialize(textobjects);
-    File.WriteAllText("textobjects.json", json);
+    var conn = new SqlConnection(connection);
+    var rowsAffected = await conn.ExecuteAsync("INSERT INTO TextObject VALUES (@Index, @Text, @ForeColor, @BackColor)", textobject);
 });
 app.UseStaticFiles();
 app.Run();
-
-/*
-   app.MapGet("/terje", () =>
-   {
-   return new Person
-   {
-   Name = "Terje",
-   Email = "terje@getacademy.no"
-   };
-   });
-   
-   app.MapPost("/terje", (Person p) =>
-   {
-   Console.WriteLine($"{p.Name} {p.Email}");
-   });
- */
