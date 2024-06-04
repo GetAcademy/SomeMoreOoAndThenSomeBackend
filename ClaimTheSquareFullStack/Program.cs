@@ -1,20 +1,23 @@
+using System.Text.Json;
 using ClaimTheSquareFullStack.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 app.UseHttpsRedirection();
-var textobjects = new List<TextObject>()
-{
-    new TextObject{ Index = 5, Text ="A", BackColor = "blue", ForeColor = "white"},
-    new TextObject{ Index = 6, Text ="B", BackColor = "white", ForeColor = "blue"},
-};
+
 app.MapGet("/textobject", () =>
 {
+    var json = File.ReadAllText("textobjects.json");
+    var textobjects = JsonSerializer.Deserialize<List<TextObject>>(json);
     return textobjects;
 });
 app.MapPost("/textobject", (TextObject textobject) =>
 {
+    var json = File.ReadAllText("textobjects.json");
+    var textobjects = JsonSerializer.Deserialize<List<TextObject>>(json);
     textobjects.Add(textobject);
+    json = JsonSerializer.Serialize(textobjects);
+    File.WriteAllText("textobjects.json", json);
 });
 app.UseStaticFiles();
 app.Run();
