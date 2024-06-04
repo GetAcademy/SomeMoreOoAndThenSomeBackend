@@ -1,0 +1,3 @@
+- skrive om api til persistens med fil
+- intro til helt grunnleggende SQL og MS SQL Server 
+- skrive om api til persistens med database

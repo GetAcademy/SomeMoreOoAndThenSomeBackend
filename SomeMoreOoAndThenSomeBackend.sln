@@ -6,11 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plan", "plan", "{0CA10D75-529B-42D9-9857-29713566AE94}"
 	ProjectSection(SolutionItems) = preProject
 		plan.txt = plan.txt
+		plan2.txt = plan2.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexibleList", "FlexibleList\FlexibleList.csproj", "{23C3441F-4C34-448B-9683-32A8E7ABA219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimTheSquareFullStack", "ClaimTheSquareFullStack\ClaimTheSquareFullStack.csproj", "{F8238DAC-ED58-4A22-B61B-A04261F87A53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClaimTheSquareFullStack", "ClaimTheSquareFullStack\ClaimTheSquareFullStack.csproj", "{F8238DAC-ED58-4A22-B61B-A04261F87A53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
