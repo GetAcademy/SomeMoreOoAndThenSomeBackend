@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        let response;
+        getData();
+        postData();
+        async function getData() {
+            response = await axios.get('/terje');
+            console.log(response.data);
+        }
+
+        async function postData() {
+            let data = [9,8,7];
+            let response = await axios.post('/terje', data);            
+        }
+    </script>
+</body>
+</html>
